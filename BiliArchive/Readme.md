@@ -14,6 +14,7 @@
 | 视频 | 作者 | 稿件时间(北京) | 归档 | 注 |
 | :-- | :--: | :--: | :--: | :--: |
 | [【群友投稿：11月6日某地台球厅一群女孩持刀乱砍事件！太狠了！《死神来了番外》】](https://www.bilibili.com/video/BV1FMzUYgEwr) | [惊险高能君](https://space.bilibili.com/1259668265) | 2024/12/03 16:29:36 | [2](https://t.me/NnShared/2) <sup>5</sup> | - |
+| [男子与养狗女子发生冲突!对此你怎么看](https://www.bilibili.com/video/BV1y6miYMEk8) | [呆眼看世界](https://space.bilibili.com/8526752) | 2024/11/10 11:30:35 | [3](https://t.me/NnShared/3) <sup>7</sup> | - |
 <!--表2.0 End-->
 
 ## 旧版数据
