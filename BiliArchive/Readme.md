@@ -23,6 +23,8 @@
 <!--表2.0 End-->
 
 ## 旧版数据
+当前文件是新项目中的，项目跳转链接基本无效。旧项目在：<br/>
+https://github.com/NnWinter/Bilibili_Shared/tree/main/Archive
 
 页内跳转：
 * [被删视频](#%E8%A2%AB%E5%88%A0%E8%A7%86%E9%A2%91)
