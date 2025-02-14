@@ -1,0 +1,120 @@
+
+/* A4 页面 */
+.a4 {
+    position: relative;
+    /*
+    width: 210mm;
+    height: 297mm;
+    padding: 0mm;
+    margin: 0 0px;
+    */
+    width: 209.9mm;
+    height: 296.9mm;
+    padding-top: 0.05mm;
+    padding-left: 0.05mm;
+    overflow: hidden;
+
+    background-color: white;
+    /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); */
+    border: 1px solid #ccc;
+}
+.a4_in {
+    position: relative;
+    margin-top: 15mm;
+    margin-left: 15mm;
+    /* margin-bottom: 15mm;
+    margin-right: 15mm; */
+    width: 180mm;
+    height: 267mm;
+    /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); */
+    border: 1px dashed rgba(0, 0, 0, 0.1);
+}
+
+/* 辅助框 */
+.guideBox {
+    border: 1px solid #ccc;
+}
+
+.inline_block{
+    display: inline-block;
+}
+
+.padding_12{
+    padding: 12pt;
+}
+
+.margin_12{
+    margin:12pt;
+}
+
+.margin_top_3{
+    margin-top:3pt;
+}
+
+.margin_top_6{
+    margin-top:6pt;
+}
+
+.margin_top_12{
+    margin-top:12pt;
+}
+
+/* #region ==== APA6 ==== */
+
+.apa6{
+    overflow: hidden;
+    position: relative;
+    width: 8.3in;
+    height: 11.7in;
+    font-family: 'Times New Roman';
+    font-size: 12pt;
+    line-height: 2;
+    border: 1px solid #ccc;
+}
+.apa6_in{
+    position: absolute;
+    margin-left: 1in;
+    margin-top: 1in;
+    width: 6.3in;
+    height: 9.7in;
+    border: 1px dashed rgba(0, 0, 0, 0.1);
+}
+.apa6_head{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5in;
+    margin-left: 1in;
+    width: 6.3in;
+    font-family: 'Calibri';
+    color: rgba(0, 0, 0, 0.5)
+}
+.apa6_indent{
+    text-indent: 0.5in;
+}
+.apa6_h1{
+    text-align: center;
+    font-size: 16pt;
+    font-weight: bold;
+}
+
+/* #endregion */
+
+/* 打印时隐藏边框 */
+@media print {
+    .a4,
+    .guideBox,
+    .a4_in,
+    .apa6,
+    .apa6_in
+    {
+        box-shadow: none;
+        border: none;
+    }
+    .a4, .a4_in, .apa6, .apa6_in{
+        page-break-inside: avoid;
+    }
+    .a4, .apa6{
+        page-break-after: always;
+    }
+}

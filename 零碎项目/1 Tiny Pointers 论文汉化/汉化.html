@@ -1,0 +1,176 @@
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="Document.css" />
+    <link rel="stylesheet" type="text/css" href="TextFormat.css" />
+    <style>
+      /* -- 修复斜体位移用 -- */
+      .iDisplace > i {
+        position: relative;
+        left: -1pt;
+      }
+      .iDisplace1 {
+        position: relative;
+        left: -1pt;
+      }
+      .iDisplace2 {
+        position: relative;
+        left: -2pt !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="a4 yahei_font">
+      <div class="a4_in">
+        <h1 class="center">Tiny Pointers (微指针)</h1>
+        <div class="p1_作者">
+          <div class="sub">
+            <div>Michael A. Bender ∗</div>
+            <div>Alex Conway †</div>
+            <div>Martn Farach-Colton ‡</div>
+          </div>
+          <div class="sub sub2">
+            <div>William Kuszmaul §</div>
+            <div>Guido Tagliavini ¶</div>
+          </div>
+          <style>
+            .p1_作者 {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              /* 使整个容器的内容居中 */
+            }
+
+            .p1_作者 > .sub {
+              display: flex;
+              justify-content: space-evenly;
+              /* 均匀分布元素 */
+              width: 500px;
+              /* 容器的宽度 */
+              text-align: center;
+            }
+
+            .p1_作者 > .sub2 {
+              width: 400px;
+            }
+          </style>
+        </div>
+        <h4 class="center">摘要</h4>
+        <div class="indentZh">
+          本文介绍了一种新的数据结构对象，我们称之为微指针 (tiny
+          pointer)。在许多应用中，传统的 log<i>n</i> 位指针可以被 o(log<i>n</i>)
+          位的微指针所替代，代价仅为一个常数因子的时间开销。我们发展了微指针的全面理论，并给出了固定大小微指针
+          (fixed-size tiny pointers) 和可变大小微指针 (variable-size tiny
+          pointers)
+          的最优构造方法。固定大小微指针指的是所有微指针的大小必须相同的设置，而可变大小微指针指的是平均微指针的大小必须较小，但某些微指针可以较大。如果一个微指针引用一个填充到负载因子
+          (load factor) 为 1 +
+          <i>k</i> 的数组中的元素，那么在固定大小情况下，最优微指针大小是
+          Θ(logloglog<i>n</i>
+          + log<i>k</i>) 位，而在可变大小情况下，期望的微指针大小是
+          Θ(log<i>k</i>) 位。我们的微指针构造还要求我们重新审视与球与箱 (balls
+          and bins) 相关的几个经典问题；这些结果可能具有独立的兴趣。
+        </div>
+        <div class="indentZh">
+          通过使用微指针 (tiny
+          pointers)，我们重新审视了五个经典的数据结构问题。我们证明了：
+          <ul class="no_indent">
+            <li class="iDisplace">
+              一个存储 <i>n</i> 个 <i>v</i> 位值的数据结构，针对
+              <i>n</i> 个键进行常数时间的修改/查询，可以实现其空间复杂度为
+              <i>n</i><i>v</i> + <i>O </i>(<i>n</i> log<sup>(r)</sup><i>n</i>)
+              位，其中 r > 0 为任意常数，只要用户为每个键存储一个期望大小为
+              <i>O </i>(1) 的微指针，log<sup>(r)</sup><i>n</i> 是 r 次迭代对数。
+            </li>
+            <li class="iDisplace">
+              任何二叉搜索树 (binary search tree)
+              都可以通过常数因子的时间开销进行精简，如果我们允许进行
+              <i>O </i>(log* <i>n</i>) 时间的修改，它甚至可以在
+              <i>O </i>(<i>n</i>) 位内接近最优，即使是旋转树（如伸展树 (splay
+              tree) 和红黑树 (red-black tree)）也适用。
+            </li>
+            <li class="iDisplace">
+              任何固定容量的键值字典 (key-value dictionary)
+              都可以通过常数时间的开销和 1 + o(1)
+              的空间开销变得稳定（即，插入后的项不再移动）。
+            </li>
+            <li class="iDisplace">
+              任何要求统一大小值的键值字典，都可以通过常数时间开销支持任意大小的值，并且对于每个
+              j 位值，在空间上增加 log<sup>(r)</sup><i>n</i> + <i>O </i>(log
+              <i class="iDisplace2">j</i>) 位的额外开销，其中 r > 0
+              为我们选择的任意常数。
+            </li>
+            <li class="iDisplace">
+              给定一个大小为 (1 + ε)<i>n</i> 的外部存储数组 (external-memory
+              array) A，其中包含最多 <i>n</i> 个键值对，能够维持一个大小为
+              <i>O </i>(<i>n</i> log ε<sup>-1</sup>) 位的内部存储库
+              (internal-memory stash)，以便能够在常数时间内计算数组 A
+              中任意键值对的位置（且无需 IO 操作）。
+            </li>
+          </ul>
+          这些都是经典且经过广泛研究的问题，在每个情况下，微指针使我们能够将自然的空间低效的解决方案（使用指针）转变为空间高效的解决方案，几乎不需要额外成本。
+        </div>
+        <div class="p1_页脚">
+          <hr />
+          <table class="tab_16">
+            <tr>
+              <td>∗ Stony Brook University.</td>
+              <td>
+                <a href="bender@cs.stonybrook.edu">bender@cs.stonybrook.edu</a>
+              </td>
+            </tr>
+            <tr>
+              <td>† VMware Research Group.</td>
+              <td><a href="aconway@vmware.com">aconway@vmware.com</a></td>
+            </tr>
+            <tr>
+              <td>‡ Rutgers University.</td>
+              <td>
+                <a href="martin@farach-colton.com">martin@farach-colton.com</a>
+              </td>
+            </tr>
+            <tr>
+              <td>§ Massachusetts Institute of Technology.</td>
+              <td><a href="kuszmaul@mit.edu">kuszmaul@mit.edu</a></td>
+            </tr>
+            <tr>
+              <td>¶ Rutgers University.</td>
+              <td><a href="guido.tag@rutgers.edu">guido.tag@rutgers.edu</a></td>
+            </tr>
+          </table>
+          <style>
+            .p1_页脚 {
+              position: absolute;
+              bottom: 0;
+            }
+            .p1_页脚 > table td {
+              padding-right: 10pt;
+            }
+            .p1_页脚 > table a {
+              color: black;
+            }
+          </style>
+        </div>
+      </div>
+      <div
+        style="
+          position: absolute;
+          bottom: 0px;
+          width: 100%;
+          text-align: center;
+          font-size: 10pt;
+        "
+      >
+        汉化：NnWinter @<a href="github.com/NnWinter" style="color: black"
+          >github.com/NnWinter</a
+        ><br />
+        项目:
+        <a href="github.com/NnWinter/Share2412" style="color: black"
+          >github.com/NnWinter/Share2412</a
+        >&gt;零碎项目&gt;1<br/>
+        如有错误或侵权，请联系修改或删除
+      </div>
+    </div>
+  </body>
+</html>

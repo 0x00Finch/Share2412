@@ -1,0 +1,82 @@
+.tab {
+    margin-left: 24pt;
+}
+
+.tab_12 {
+    margin-left: 12pt;
+}
+
+.tab_16 {
+    margin-left: 16pt;
+}
+
+.tab_20 {
+    margin-left: 20pt;
+}
+
+.tab_48 {
+    margin-left: 48pt;
+}
+
+.hanging {
+    text-indent: -24pt;
+    padding-left: 24pt;
+}
+
+.center {
+    text-align: center;
+}
+
+.left{
+    text-align: left;
+}
+
+.pre {
+    white-space: pre-wrap;
+}
+.pre_no_wrap {
+    white-space: pre;
+}
+
+.nopre {
+    white-space: normal;
+}
+
+.collapse {
+    border-collapse: collapse;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.h3 { 
+    font-size: 14pt;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+/* indentation */
+.indent {
+    text-indent: 18pt;
+}
+.indentZh{
+    text-indent: 2em;
+}
+.no_indent {
+    text-indent: 0pt;
+}
+
+/* 小字体文本块 */
+.text_block {
+    /* 低分辨率下高保真的字体 */
+    font-family: Verdana, Tahoma, sans-serif;
+    font-size: 8pt;
+    line-height: 1;
+    background-color: #EEE;
+}
+
+.bold_shadow {
+    text-shadow: 0px 0px 0.2px rgba(0, 0, 0, 1);
+    font-weight: normal;
+}
