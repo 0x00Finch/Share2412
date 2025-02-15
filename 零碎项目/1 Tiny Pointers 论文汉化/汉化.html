@@ -1,322 +1,470 @@
 <html lang="en">
-  <head>
-    <title></title>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" type="text/css" href="Document.css" />
-    <link rel="stylesheet" type="text/css" href="TextFormat.css" />
-    <style>
-      /* -- 修复斜体位移用 -- */
-      .iDisplace > i {
-        position: relative;
-        left: -1pt;
-      }
-      .iDisplace1 {
-        position: relative;
-        left: -1pt;
-      }
-      .iDisplace2 {
-        position: relative;
-        left: -2pt !important;
-      }
-      /* -- 替代的段落 -- */
-      .para {
-        margin-top: 1em;
-        margin-bottom: 1em;
-      }
-      /* -- 中文12太大了，改小点 -- */
-      .a4_in {
-        font-size: 11pt;
-      }
-      /* -- ul 和 ol 用这个消除与上文的间距 -- */
-      .liRNoGap {
-        margin-top: 0;
-        margin-bottom: 0;
-      }
-      .tab_6 {
-        margin-left: 6pt;
-      }
-      /* -- 红色 -- */
-      .red {
-        color: red;
-      }
-      /* -- 页脚附注 -- */
-      .附注 {
-        font-size: 9pt;
-      }
-      .附注居下 {
-        position: absolute;
-        bottom: 4pt;
-      }
-    </style>
-  </head>
 
-  <body>
-    <!-- 页1 -->
-    <div class="a4 yahei_font">
-      <div class="a4_in">
-        <h1 class="center">Tiny Pointers (微指针)</h1>
-        <div class="p1_作者">
-          <div class="sub">
-            <div>Michael A. Bender ∗</div>
-            <div>Alex Conway †</div>
-            <div>Martn Farach-Colton ‡</div>
-          </div>
-          <div class="sub sub2">
-            <div>William Kuszmaul §</div>
-            <div>Guido Tagliavini ¶</div>
-          </div>
-          <style>
-            .p1_作者 {
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              /* 使整个容器的内容居中 */
-            }
+<head>
+  <title></title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" type="text/css" href="Document.css" />
+  <link rel="stylesheet" type="text/css" href="TextFormat.css" />
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    /* -- 修复斜体位移用 -- */
+    .iDisplace>i {
+      position: relative;
+      left: -1pt;
+    }
 
-            .p1_作者 > .sub {
-              display: flex;
-              justify-content: space-evenly;
-              /* 均匀分布元素 */
-              width: 500px;
-              /* 容器的宽度 */
-              text-align: center;
-            }
+    .iDisplace1 {
+      position: relative;
+      left: -1pt;
+    }
 
-            .p1_作者 > .sub2 {
-              width: 400px;
-            }
-          </style>
+    .iDisplace2 {
+      position: relative;
+      left: -2pt !important;
+    }
+
+    /* -- 替代的段落 -- */
+    .para {
+      margin-top: 1em;
+      margin-bottom: 1em;
+    }
+
+    .para_lsb {
+      margin-bottom: 0.25em;
+    }
+
+    /* -- 中文12太大了，改小点 -- */
+    .a4_in {
+      font-size: 10.5pt;
+    }
+
+    /* -- ul 和 ol 用这个消除与上文的间距 -- */
+    .liRNoGap {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .tab_6 {
+      margin-left: 6pt;
+    }
+
+    /* -- 颜色 -- */
+    .red {
+      color: red;
+    }
+
+    .green {
+      color: rgb(0, 225, 0);
+    }
+
+    /* -- 页脚附注 -- */
+    .附注 {
+      font-size: 9pt;
+    }
+
+    .附注居下 {
+      position: absolute;
+      bottom: 4pt;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 页1 -->
+  <div class="a4 yahei_font">
+    <div class="a4_in">
+      <h1 class="center">Tiny Pointers (微指针)</h1>
+      <div class="p1_作者">
+        <div class="sub">
+          <div>Michael A. Bender ∗</div>
+          <div>Alex Conway †</div>
+          <div>Martn Farach-Colton ‡</div>
         </div>
-        <h4 class="center">摘要</h4>
-        <div class="indentZh">
-          本文介绍了一种新的数据结构对象，我们称之为微指针 (tiny
-          pointer)。在许多应用中，传统的 log<i>n</i> 位指针可以被 o(log<i>n</i>)
-          位的微指针所替代，代价仅为一个常数因子的时间开销。我们发展了微指针的全面理论，并给出了固定大小微指针
-          (fixed-size tiny pointers) 和可变大小微指针 (variable-size tiny
-          pointers)
-          的最优构造方法。固定大小微指针指的是所有微指针的大小必须相同的设置，而可变大小微指针指的是平均微指针的大小必须较小，但某些微指针可以较大。如果一个微指针引用一个填充到负载因子
-          (load factor) 为 1 +
-          <i>k</i> 的数组中的元素，那么在固定大小情况下，最优微指针大小是
-          Θ(logloglog<i>n</i>
-          + log<i>k</i>) 位，而在可变大小情况下，期望的微指针大小是
-          Θ(log<i>k</i>) 位。我们的微指针构造还要求我们重新审视与球与箱 (balls
-          and bins) 相关的几个经典问题；这些结果可能具有独立的兴趣。
+        <div class="sub sub2">
+          <div>William Kuszmaul §</div>
+          <div>Guido Tagliavini ¶</div>
         </div>
-        <div class="indentZh">
-          通过使用微指针 (tiny
-          pointers)，我们重新审视了五个经典的数据结构问题。我们证明了：
-          <ul class="no_indent liRNoGap tab_6">
-            <li class="iDisplace">
-              一个存储 <i>n</i> 个 <i>v</i> 位值的数据结构，针对
-              <i>n</i> 个键进行常数时间的修改/查询，可以实现其空间复杂度为
-              <i>n</i><i>v</i> + <i>O </i>(<i>n</i> log<sup>(r)</sup><i>n</i>)
-              位，其中 r > 0 为任意常数，只要用户为每个键存储一个期望大小为
-              <i>O </i>(1) 的微指针，log<sup>(r)</sup><i>n</i> 是 r 次迭代对数。
-            </li>
-            <li class="iDisplace">
-              任何二叉搜索树 (binary search tree)
-              都可以通过常数因子的时间开销进行精简，如果我们允许进行
-              <i>O </i>(log* <i>n</i>) 时间的修改，它甚至可以在
-              <i>O </i>(<i>n</i>) 位内接近最优，即使是旋转树（如伸展树 (splay
-              tree) 和红黑树 (red-black tree)）也适用。
-            </li>
-            <li class="iDisplace">
-              任何固定容量的键值字典 (key-value dictionary)
-              都可以通过常数时间的开销和 1 + o(1)
-              的空间开销变得稳定（即，插入后的项不再移动）。
-            </li>
-            <li class="iDisplace">
-              任何要求统一大小值的键值字典，都可以通过常数时间开销支持任意大小的值，并且对于每个
-              j 位值，在空间上增加 log<sup>(r)</sup><i>n</i> + <i>O </i>(log
-              <i class="iDisplace2">j</i>) 位的额外开销，其中 r > 0
-              为我们选择的任意常数。
-            </li>
-            <li class="iDisplace">
-              给定一个大小为 (1 + ε)<i>n</i> 的外部存储数组 (external-memory
-              array) A，其中包含最多 <i>n</i> 个键值对，能够维持一个大小为
-              <i>O </i>(<i>n</i> log ε<sup>-1</sup>) 位的内部存储库
-              (internal-memory stash)，以便能够在常数时间内计算数组 A
-              中任意键值对的位置（且无需 IO 操作）。
-            </li>
-          </ul>
-          这些都是经典且经过广泛研究的问题，在每个情况下，微指针使我们能够将自然的空间低效的解决方案（使用指针）转变为空间高效的解决方案，几乎不需要额外成本。
-        </div>
-        <div class="p1_页脚">
-          <hr />
-          <table
-            class="tab_16"
-            style="position: relative; font-size: 10pt; bottom: 2pt"
-          >
-            <tr>
-              <td>∗ Stony Brook University.</td>
-              <td>
-                <a href="bender@cs.stonybrook.edu">bender@cs.stonybrook.edu</a>
-              </td>
-            </tr>
-            <tr>
-              <td>† VMware Research Group.</td>
-              <td><a href="aconway@vmware.com">aconway@vmware.com</a></td>
-            </tr>
-            <tr>
-              <td>‡ Rutgers University.</td>
-              <td>
-                <a href="martin@farach-colton.com">martin@farach-colton.com</a>
-              </td>
-            </tr>
-            <tr>
-              <td>§ Massachusetts Institute of Technology.</td>
-              <td><a href="kuszmaul@mit.edu">kuszmaul@mit.edu</a></td>
-            </tr>
-            <tr>
-              <td>¶ Rutgers University.</td>
-              <td><a href="guido.tag@rutgers.edu">guido.tag@rutgers.edu</a></td>
-            </tr>
-          </table>
-          <style>
-            .p1_页脚 {
-              position: absolute;
-              bottom: 0;
-            }
-            .p1_页脚 > table td {
-              padding-right: 10pt;
-            }
-            .p1_页脚 > table a {
-              color: black;
-            }
-          </style>
-        </div>
+        <style>
+          .p1_作者 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 使整个容器的内容居中 */
+          }
+
+          .p1_作者>.sub {
+            display: flex;
+            justify-content: space-evenly;
+            /* 均匀分布元素 */
+            width: 500px;
+            /* 容器的宽度 */
+            text-align: center;
+          }
+
+          .p1_作者>.sub2 {
+            width: 400px;
+          }
+        </style>
       </div>
-      <div
-        style="
+      <h4 class="center">摘要</h4>
+      <div class="indentZh">
+        本文介绍了一种新的数据结构对象，我们称之为微指针 (tiny
+        pointer)。在许多应用中，传统的 log<i>n</i> 位指针可以被 o(log<i>n</i>)
+        位的微指针所替代，代价仅为一个常数因子的时间开销。我们发展了微指针的全面理论，并给出了固定大小微指针
+        (fixed-size tiny pointers) 和可变大小微指针 (variable-size tiny
+        pointers)
+        的最优构造方法。固定大小微指针指的是所有微指针的大小必须相同的设置，而可变大小微指针指的是平均微指针的大小必须较小，但某些微指针可以较大。如果一个微指针引用一个填充到负载因子
+        (load factor) 为 1 +
+        <i>k</i> 的数组中的元素，那么在固定大小情况下，最优微指针大小是
+        Θ(logloglog<i>n</i>
+        + log<i>k</i>) 位，而在可变大小情况下，期望的微指针大小是
+        Θ(log<i>k</i>) 位。我们的微指针构造还要求我们重新审视与球与箱 (balls
+        and bins) 相关的几个经典问题；这些结果可能具有独立的兴趣。
+      </div>
+      <div class="indentZh">
+        通过使用微指针 (tiny
+        pointers)，我们重新审视了五个经典的数据结构问题。我们证明了：
+        <ul class="no_indent liRNoGap tab_6">
+          <li class="iDisplace">
+            一个存储 <i>n</i> 个 <i>v</i> 位值的数据结构，针对
+            <i>n</i> 个键进行常数时间的修改/查询，可以实现其空间复杂度为
+            <i>n</i><i>v</i> + <i>O </i>(<i>n</i> log<sup>(r)</sup><i>n</i>)
+            位，其中 r > 0 为任意常数，只要用户为每个键存储一个期望大小为
+            <i>O </i>(1) 的微指针，log<sup>(r)</sup><i>n</i> 是 r 次迭代对数。
+          </li>
+          <li class="iDisplace">
+            任何二叉搜索树 (binary search tree)
+            都可以通过常数因子的时间开销进行精简，如果我们允许进行
+            <i>O </i>(log* <i>n</i>) 时间的修改，它甚至可以在
+            <i>O </i>(<i>n</i>) 位内接近最优，即使是旋转树（如伸展树 (splay
+            tree) 和红黑树 (red-black tree)）也适用。
+          </li>
+          <li class="iDisplace">
+            任何固定容量的键值字典 (key-value dictionary)
+            都可以通过常数时间的开销和 1 + o(1)
+            的空间开销变得稳定（即，插入后的项不再移动）。
+          </li>
+          <li class="iDisplace">
+            任何要求统一大小值的键值字典，都可以通过常数时间开销支持任意大小的值，并且对于每个
+            j 位值，在空间上增加 log<sup>(r)</sup><i>n</i> + <i>O </i>(log
+            <i class="iDisplace2">j</i>) 位的额外开销，其中 r > 0
+            为我们选择的任意常数。
+          </li>
+          <li class="iDisplace">
+            给定一个大小为 (1 + ε)<i>n</i> 的外部存储数组 (external-memory
+            array) A，其中包含最多 <i>n</i> 个键值对，能够维持一个大小为
+            <i>O </i>(<i>n</i> log ε<sup>-1</sup>) 位的内部存储库
+            (internal-memory stash)，以便能够在常数时间内计算数组 A
+            中任意键值对的位置（且无需 IO 操作）。
+          </li>
+        </ul>
+        这些都是经典且经过广泛研究的问题，在每个情况下，微指针使我们能够将自然的空间低效的解决方案（使用指针）转变为空间高效的解决方案，几乎不需要额外成本。
+      </div>
+      <div class="附注 附注居下">
+        <hr />
+        <table class="tab_16" style="position: relative; font-size: 10pt; bottom: 2pt">
+          <tr>
+            <td>∗ Stony Brook University.</td>
+            <td>
+              <a href="bender@cs.stonybrook.edu" style="color: black;">bender@cs.stonybrook.edu</a>
+            </td>
+          </tr>
+          <tr>
+            <td>† VMware Research Group.</td>
+            <td><a href="aconway@vmware.com" style="color: black;">aconway@vmware.com</a></td>
+          </tr>
+          <tr>
+            <td>‡ Rutgers University.</td>
+            <td>
+              <a href="martin@farach-colton.com" style="color: black;">martin@farach-colton.com</a>
+            </td>
+          </tr>
+          <tr>
+            <td>§ Massachusetts Institute of Technology.</td>
+            <td><a href="kuszmaul@mit.edu" style="color: black;">kuszmaul@mit.edu</a></td>
+          </tr>
+          <tr>
+            <td>¶ Rutgers University.</td>
+            <td><a href="guido.tag@rutgers.edu" style="color: black;">guido.tag@rutgers.edu</a></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div style="
           position: absolute;
           bottom: 3px;
           width: 100%;
           text-align: center;
           font-size: 9pt;
-        "
-      >
-        汉化：NnWinter @<a href="github.com/NnWinter" style="color: black"
-          >github.com/NnWinter</a
-        ><br />
-        项目:
-        <a href="github.com/NnWinter/Share2412" style="color: black"
-          >github.com/NnWinter/Share2412</a
-        >&gt;零碎项目&gt;1<br />
-        如有错误或侵权，请联系修改或删除
+        ">
+      汉化：NnWinter @<a href="github.com/NnWinter" style="color: black">github.com/NnWinter</a><br />
+      项目:
+      <a href="github.com/NnWinter/Share2412" style="color: black">github.com/NnWinter/Share2412</a>&gt;零碎项目&gt;1<br />
+      如有错误或侵权，请联系修改或删除
+    </div>
+  </div>
+  <!-- 页2 (变量斜体没有加，太耗时，先处理主要内容) -->
+  <div class="a4 yahei_font">
+    <div class="a4_in">
+      <h2 style="line-height: 0.5">1&emsp;引言 (Introduction)</h2>
+      <div class="para">
+        <div class="">
+          存储一个指针需要多少位？如果我们对指针一无所知，只知道它引用的是一个大小为
+          <i>n</i> 的数组中的元素，那么指针至少需要 log <i>n</i> 位。
+        </div>
+        <div class="indentZh">
+          然而，对于许多（甚至可能是大多数）指针的使用情况，这个信息论的下限并不适用。正如我们在本文中所看到的，即使是关于指针的少量先验信息（例如，链表中某个节点的前驱）也可以用来突破
+          log <i>n</i> 下限。
+        </div>
+        <div class="indentZh">
+          本文介绍了一种通用工具，我们称之为
+          <b><i>微指针 (tiny pointer)</i></b>，用于压缩指针。在使用指针的场景中，微指针通常可以代替常规指针，从而消除几乎所有的指针空间开销。
+        </div>
+      </div>
+      <div class="para">
+        <div>
+          <b>什么是微指针 (tiny pointer)？</b>假设有 n
+          个或更多的用户（例如，Alice、Bob 等）共享一个大小为 n 的数组
+          A。用户可以通过一个函数 Allocate() 请求 A
+          中的一个位置，如果有可用的位置，该函数返回一个指针
+          p，指向现在专门为该用户保留的位置；用户可以稍后通过调用函数 Free(p)
+          来释放该内存位置。每个用户承诺一次最多只分配一个内存位置<sup class="red">1</sup>。例如，如果 Alice 调用 Allocate() 获取指针 p，她必须在再次调用
+          Allocate() 之前先调用 Free(p)。
+        </div>
+        <div class="indentZh">
+          指针 p 需要多大？自然的答案是，每个指针使用 logn
+          位。然而，考虑到每个指针都有一个不同的所有者，这使得可以将指针压缩到
+          o(logn) 位。一个关键的洞察是，同一个指针 p
+          对不同的用户可能意味着不同的内容，通过以下方案实现：用户 k 可以调用
+          Allocate(k) 来获取一个微指针 (tiny pointer)
+          p；他们可以通过计算一个函数 Dereference(kp) 来解引用微指针
+          p，该函数的值仅依赖于 k、p 和随机位；他们可以通过调用函数 Free(kp)
+          来释放微指针 p。
+        </div>
+        <div class="indentZh">
+          微指针之所以不受信息论下界 log n 位的限制，是因为 k 和 p
+          一起编码了分配的位置，而不是仅仅编码
+          p。因此，这个方案提供了一种机制，利用已经存在的关于指针的信息（即，指针的所有者是谁）将指针压缩到
+          o(logn) 位大小。
+        </div>
+        <div class="">
+          我们将函数 Allocate(k)/Dereference(kp)/Free(kp) 的算法，以及数组 A
+          和任何相关的元数据 M，统称为<b>解引用表 (dereference table)</b>。我们通常将用户（即微指针 (tiny pointer) 的所有者）称为<b>键
+            (keys)</b>，将存储在微指针所指向的分配位置的数据称为<b>值 (values)</b>。一个解引用表，如果能够在一个 nb 位的数组中存储 b 位值（并使用
+          O(n) 位的元数据），并且能够在一次操作中存储 (1-δ)n
+          个值，则称其支持<b>负载因子 (load factor)</b> 1-δ。
+        </div>
+        <div class="indentZh">
+          理想的解引用表应同时支持 δ=o(1) 的负载因子、o(logn)
+          大小的微指针，并且具有常数时间的操作。正如我们将要讨论的那样，我们证明了最佳可实现的负载因子
+          1-δ 和最佳可实现的微指针大小 s
+          之间的权衡曲线。在这条权衡曲线上构造最优的解引用表是本文的核心问题之一。
+        </div>
+        <div class="para">
+          <b>使用微指针 (tiny pointers)
+            来获得微小数据结构。除了使用微指针构造解引用表 (dereference
+            tables)
+            之外，我们还展示了这些解引用表可以用于为多个经典问题提供改进的解决方案：</b>
+          <ul class="liRNoGap">
+            <li>
+              一个存储 n 个 v 位值的数据结构，针对 n
+              个键进行常数时间的修改和查询，可以实现其空间复杂度为 nv + O(n
+              log<sup>(r)</sup> n) 位，其中 r > 0
+              为任意常数，只要用户为每个键存储一个期望大小为 O(1)
+              的微指针，在这里，log<sup>(r)</sup> n 是 r 次迭代对数。<sup class="red">2</sup>
+            </li>
+            <li>
+              存储 n 个可排序键的 n 个节点的任何二叉搜索树 (binary search
+              tree) 都可以通过常数时间的开销进行精简，并且可以通过 O(log* n)
+              时间的修改在 O(n) 位内接近最优。这甚至适用于伸展树 (splay tree)
+              等基于旋转的树，伸展树被猜测是动态最优的。
+            </li>
+            <li>
+              存储 v 位值的任何固定容量键值字典 (key-value dictionary)
+              都可以通过常数时间的开销变得稳定（即，插入后的项不再移动），并且每个值的附加空间开销为
+              O(logv) 位。
+            </li>
+            <li>
+              任何要求统一大小值的键值字典，都可以通过常数时间的开销支持任意大小的值，并且对于每个
+              j 位值，在空间上增加 log<sup>(r)</sup> n + O(logj)
+              位的额外开销，其中 r > 0 为我们选择的任意常数。
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="附注 附注居下">
+        <hr />
+        <div class="indentZh">
+          <sup class="red">1</sup> 用户 k
+          可以通过为每个分配创建一个唯一标签来请求多个位置。在这种情况下，我们将分配的用户视为
+          k 的拼接，因此用户 k 可以拥有多个分配，而不违反唯一性要求。
+        </div>
+        <div class="indentZh">
+          <sup class="red">2</sup> 即，log<sup>(1)</sup> n := logn 且 log<sup>(i+1)</sup>
+          n := loglog<sup>(i)</sup> n。
+        </div>
+        <div class="indentZh">
+          为了理解解引用表 (dereference tables) 和球与箱子方案 (balls-and-bins
+          schemes) 之间的关系，可以将键视为必须分配到不同箱子的球。每个球 x
+          都有一些探测序列 h1(x), h2(x), ... ∈
+          [n]，表示它可以放置的箱子。支持大小为 O(s) 的微指针 (tiny pointers)
+          相当于维持一个动态的球与箱子分配，使得每个球 x 位于某个箱子 hi(x)
+          中，满足 i ≤ 2O(s)。
+        </div>
       </div>
     </div>
-    <!-- 页2 (变量斜体没有加，太耗时，先处理主要内容) -->
-    <div class="a4 yahei_font">
-      <div class="a4_in">
-        <h3>1 引言 (Introduction)</h3>
+  </div>
+  <!-- 页3 -->
+  <div class="a4 yahei_font">
+    <div class="a4_in">
+      <!-- 1 Introduction 续 -->
+      <div>
+        <div class="indentZh para_lsb">
+          <ul class="no_indent liRNoGap tab_6">
+            <li class="iDisplace">
+              给定一个大小为 (1 + ε)n 的外部存储数组 (external-memory array)
+              A，其中包含最多 n 个键值对，能够维持一个大小为 O(n log
+              ε<sup>-1</sup>) 位的内部存储库 (internal-memory
+              stash)，以便能够在常数时间内计算数组 A
+              中任意键值对的位置（且无需 IO 操作）。
+            </li>
+          </ul>
+        </div>
+        这些问题的共同点在于，每个问题都可以通过指针空间低效地轻松解决，而空间高效地解决它们的难度在于消除指针开销。
+        <div class="indentZh">
+          我们使用微指针 (tiny pointers)
+          的方法贯穿其中，即需要访问最优微指针构造的完整权衡曲线。这是因为需要平衡两种类型的空间开销：一种是存储微指针本身的开销，另一种是存储解引用表
+          (dereference table) 的开销。前者由微指针的大小决定，后者则由负载因子
+          (load factor) 决定。
+        </div>
+        <div class="para">
+          <b>本文。</b>本文首先发展了微指针 (tiny pointers)
+          的全面理论。我们考虑了<b><i>固定大小微指针 (fixed-size tiny pointers)</i></b>（其中每个微指针具有有限大小）和<b><i>可变大小微指针 (variable-size tiny
+              pointers)</i></b>（其中每个微指针具有有限的期望大小）。对于这两种类型的微指针，我们确定了解引用表中负载因子
+          (load factor)
+          和微指针大小之间的最优权衡曲线。接着，我们展示了上述五个微指针应用。作为附带结果，我们还将我们的微指针构造重新解释为球与箱子
+          (balls-and-bins)
+          结果。通过这样做，我们在一些重要参数范围内改进了已知的动态负载平衡的界限。
+        </div>
+      </div>
+      <!-- 1.1 -->
+      <div>
+        <h3>1.1&emsp;结果：构造最优微指针 (Optimal Tiny Pointers)</h3>
+        <div class="para">
+          在第 3、4 和 5 节中，我们发展了微指针大小 s 和解引用表负载因子 1 - δ
+          之间最佳可实现权衡曲线的严格渐近界限。
+        </div>
         <div class="para">
           <div class="">
-            存储一个指针需要多少位？如果我们对指针一无所知，只知道它引用的是一个大小为
-            <i>n</i> 的数组中的元素，那么指针至少需要 log <i>n</i> 位。
+            <b>固定大小和可变大小微指针的最优权衡。</b>对于固定大小微指针，我们证明了对于任何负载因子<br />
+            1 - δ ∉ o(1)，微指针大小 s 存在一个下界 Ω(log log log
+            n)。另一方面，通过 δ
+            参数化，我们证明了可以实现一个固定的微指针大小 s = O(log log log n
+            + log δ<sup>-1</sup>)，并给出了一个下界，证明该权衡曲线是紧的。
           </div>
           <div class="indentZh">
-            然而，对于许多（甚至可能是大多数）指针的使用情况，这个信息论的下限并不适用。正如我们在本文中所看到的，即使是关于指针的少量先验信息（例如，链表中某个节点的前驱）也可以用来突破
-            log <i>n</i> 下限。
+            我们证明了通过使用可变大小微指针，可以消除 log log log n
+            的障碍。我们证明了对于任何负载因子 1 - δ，平均微指针大小 s = O(1 +
+            log δ<sup>-1</sup>)，并且我们再次证明了这一权衡曲线对于所有 δ
+            是紧<sub style="font-size: 6pt; position: relative; top: -3pt">(最佳)</sub>的。
           </div>
           <div class="indentZh">
-            本文介绍了一种通用工具，我们称之为
-            <b><i>微指针 (tiny pointer)</i></b
-            >，用于压缩指针。在使用指针的场景中，微指针通常可以代替常规指针，从而消除几乎所有的指针空间开销。
+            对于可变大小的微小指针，我们的构造提供了一个非常强的集中界限，约束了每个微小指针的大小：如果期望大小是
+            k，那么对于任何给定的分配，返回大小大于 k + j 的微小指针的概率，在
+            j > 0 时是<br /><i>双重指数级别地小</i>。
+          </div>
+          <div class="indentZh">
+            我们所有的解引用表 (dereference-table)
+            构造都保证以高概率进行常数时间操作，即以概率 1 - 1/poly n。
+            因此，微指针可以被集成到数据结构中，同时仅带来常数因子的时间开销。
           </div>
         </div>
         <div class="para">
           <div>
-            <b>什么是微指针 (tiny pointer)？</b>假设有 n
-            个或更多的用户（例如，Alice、Bob 等）共享一个大小为 n 的数组
-            A。用户可以通过一个函数 Allocate() 请求 A
-            中的一个位置，如果有可用的位置，该函数返回一个指针
-            p，指向现在专门为该用户保留的位置；用户可以稍后通过调用函数 Free(p)
-            来释放该内存位置。每个用户承诺一次最多只分配一个内存位置<sup
-              class="red"
-              >[1]</sup
-            >。例如，如果 Alice 调用 Allocate() 获取指针 p，她必须在再次调用
-            Allocate() 之前先调用 Free(p)。
+            <b>与球与箱子 (balls and bins)</b> 的关系。在第 7
+            节中，我们将微指针 (tiny-pointer) 的结果重新解释为球至箱子
+            (balls-to-bins)
+            的结果。值得注意的是，我们能够将我们的技术应用于动态负载平衡问题，其中有
+            n 个箱子，并且最多有 m = nh 个球同时存在：对于 h ≥
+            1，我们给出了一种带有 d + 1
+            个哈希函数的球与箱子方案，该方案实现了最大负载
+            <label style="font-size: 8pt">
+              \( h + O\left(\sqrt{h \log(hd)}\right) + \frac{\log \log n}{d
+              \log \phi_d} \)
+            </label>
+            ，当 hd = o(log n) 时，<br />
+            <div style="position: relative; top: -4pt">
+              显著改善了现有的技术 [<a class="refin" href="#ref55">55</a>, <a class="refin" href="#ref56">56</a>]。
+            </div>
           </div>
           <div class="indentZh">
-            指针 p 需要多大？自然的答案是，每个指针使用 logn
-            位。然而，考虑到每个指针都有一个不同的所有者，这使得可以将指针压缩到
-            o(logn) 位。一个关键的洞察是，同一个指针 p
-            对不同的用户可能意味着不同的内容，通过以下方案实现：用户 k 可以调用
-            Allocate(k) 来获取一个微指针 (tiny pointer)
-            p；他们可以通过计算一个函数 Dereference(kp) 来解引用微指针
-            p，该函数的值仅依赖于 k、p 和随机位；他们可以通过调用函数 Free(kp)
-            来释放微指针 p。
+            为了理解解 引用表 和 球与箱子方案(balls-and-bins schemes)
+            之间的关系，可以将键视为必须分配到不同箱子的球。每个球 x
+            都有一些探测序列 h<sub>1</sub>(x), h<sub>2</sub>(x), ... ∈
+            [n]，表示它可以放置的箱子。支持大小为 O(s) 的微指针 (tiny
+            pointers) 相当于维持一个动态的球至箱子分配，使得每个球 x
+            位于某个箱子 h<sub>i</sub>(x) 中，满足 i ≤ 2<sup>O(s)</sup>。
           </div>
           <div class="indentZh">
-            微指针之所以不受信息论下界 log n 位的限制，是因为 k 和 p
-            一起编码了分配的位置，而不是仅仅编码
-            p。因此，这个方案提供了一种机制，利用已经存在的关于指针的信息（即，指针的所有者是谁）将指针压缩到
-            o(logn) 位大小。
-          </div>
-          <div class="">
-            我们将函数 Allocate(k)/Dereference(kp)/Free(kp) 的算法，以及数组 A
-            和任何相关的元数据 M，统称为<b>解引用表 (dereference table)</b
-            >。我们通常将用户（即微指针 (tiny pointer) 的所有者）称为<b
-              >键 (keys)</b
-            >，将存储在微指针所指向的分配位置的数据称为<b>值 (values)</b
-            >。一个解引用表，如果能够在一个 nb 位的数组中存储 b 位值（并使用
-            O(n) 位的元数据），并且能够在一次操作中存储 (1-δ)n
-            个值，则称其支持<b>负载因子 (load factor)</b> 1-δ。
-          </div>
-          <div class="indentZh">
-            理想的解引用表应同时支持 δ=o(1) 的负载因子、o(logn)
-            大小的微指针，并且具有常数时间的操作。正如我们将要讨论的那样，我们证明了最佳可实现的负载因子
-            1-δ 和最佳可实现的微指针大小 s
-            之间的权衡曲线。在这条权衡曲线上构造最优的解引用表是本文的核心问题之一。
-          </div>
-          <div class="para">
-            <b
-              >使用微指针 (tiny pointers)
-              来获得微小数据结构。除了使用微指针构造解引用表 (dereference
-              tables)
-              之外，我们还展示了这些解引用表可以用于为多个经典问题提供改进的解决方案：</b
-            >
-            <ul class="liRNoGap">
-              <li>
-                一个存储 n 个 v 位值的数据结构，针对 n
-                个键进行常数时间的修改和查询，可以实现其空间复杂度为 nv + O(n
-                log<sup>(r)</sup> n) 位，其中 r > 0
-                为任意常数，只要用户为每个键存储一个期望大小为 O(1)
-                的微指针，在这里，log<sup>(r)</sup> n 是 r 次迭代对数。<sup class="red"
-                  >[2]</sup
-                >
-              </li>
-              <li>
-                存储 n 个可排序键的 n 个节点的任何二叉搜索树 (binary search
-                tree) 都可以通过常数时间的开销进行精简，并且可以通过 O(log* n)
-                时间的修改在 O(n) 位内接近最优。这甚至适用于伸展树 (splay tree)
-                等基于旋转的树，伸展树被猜测是动态最优的。
-              </li>
-              <li>
-                存储 v 位值的任何固定容量键值字典 (key-value dictionary)
-                都可以通过常数时间的开销变得稳定（即，插入后的项不再移动），并且每个值的附加空间开销为
-                O(logv) 位。
-              </li>
-              <li>
-                任何要求统一大小值的键值字典，都可以通过常数时间的开销支持任意大小的值，并且对于每个
-                j 位值，在空间上增加 log<sup>(r)</sup> n + O(logj) 位的额外开销，其中 r > 0
-                为我们选择的任意常数。
-              </li>
-            </ul>
+            使得这个 球至箱子
+            问题有趣的是，同一个球可以在时间上被插入、移除并随后重新插入。第一次插入球时，它的探测序列
+            h1(x), h2(x), ... 与 解引用表
+            的状态是独立的。但如果球被移除并稍后重新插入，那么情况就不同了：解引用表的状态现在已经受到影响（并且部分依赖于）探测序列。结果是，在这个完全动态的环境中，即使是非常简单的球与箱子
+            方案（例如随机探测 (random probing)[<a class="refin" href="#ref40">40</a>] 或线性探测 (linear
+            probing) [<a class="refin" href="#ref39">39</a>, <a class="refin" href="#ref52">52</a>]）的行为也一直没有得到理论分析。<sup
+              class="red">3</sup>
           </div>
         </div>
-        <div class="p2_页脚 附注 附注居下">
-          <hr />
-          <div class="indentZh">
-            <sup>[1]</sup> 用户 k
-            可以通过为每个分配创建一个唯一标签来请求多个位置。在这种情况下，我们将分配的用户视为
-            k 的拼接，因此用户 k 可以拥有多个分配，而不违反唯一性要求。
-          </div>
-          <div class="indentZh">
-            <sup>[2]</sup> 即，log<sup>(1)</sup> n := logn 且 log<sup>(i+1)</sup> n := loglog<sup>(i)</sup> n。
-          </div>
+
+      </div>
+      <!-- 附注 -->
+      <div class="附注 附注居下">
+        <hr />
+        <div class="indentZh">
+          <sup class="red">3</sup>在这个环境中，通常将线性探测 (linear probing) 和随机探测 (random probing) 视为构建开放地址哈希表 (open-addressed
+          hash table) 的技术。在球一旦放置后不能移动的环境中（或者等效地，在哈希表删除通过墓碑 (tombstones) 实现的情况下），对随机探测或线性探测的唯一已知界限来自 Larson
+          [<a class="refin" href="#ref40">40</a>]，他分析了带有随机插入/删除操作的随机探测。
         </div>
       </div>
     </div>
-  </body>
+  </div>
+  <!-- 参考文献 -->
+  <style>
+    .refs {
+      font-size: 8pt;
+      padding-top: 0.5em;
+      padding-bottom: 0.5em;
+    }
+
+    .refin {
+      color: rgb(0, 225, 0);
+      text-decoration-line: none;
+    }
+  </style>
+  <div class="a4 yahei_font">
+    <div class="a4_in">
+      <div class="refs" id="ref39">
+        [39] Donald E. Knuth. <i>The Art of Computer Programming, Volume III: Sorting and Searching. </i>Addison
+        Wesley, 1973.
+      </div>
+      <div class="refs" id="ref40">
+        [40] Per-Ake Larson. Analysis of uniform hashing. <i>J. ACM</i>, 30(4):805819, 1983.
+      </div>
+      <div class="refs" id="ref52">
+        [52] Peter Sanders. Hashing with linear probing and referential integrity. <i>arXiv preprint
+          arXiv:1808.04602</i>,
+        2018.
+      </div>
+      <div class="refs" id="ref55">
+        [55] Berthold Vocking. How asymmetry helps load balancing. <i>J. ACM</i>, 50(4):568589, July 2003.
+      </div>
+      <div class="refs" id="ref56">
+        [56] Philipp Woelfel. Asymmetric balanced allocation with simple hash functions. In <i>Proceedings of the
+          Seventeenth Annual ACM-SIAM Symposium on Discrete Algorithms (SODA)</i>, pages 424433. ACM
+        Press, 2006
+      </div>
+    </div>
+  </div>
+</body>
+
 </html>
