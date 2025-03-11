@@ -14,7 +14,7 @@
 | [伯恩山洗澡爱唱歌](https://space.bilibili.com/174500658) |
 [千島赤](https://space.bilibili.com/1843614072) | [行早](https://space.bilibili.com/196496489) | [-OBAFGKM-](https://space.bilibili.com/309570891) | [丘神纪的小媳妇](https://space.bilibili.com/481372978) |
 <br/>
-| [孔子女士大义](https://space.bilibili.com/3546387885066751) | [6个硬币好多啊](https://space.bilibili.com/493019712) | <s>[狸子狸子雨](https://space.bilibili.com/686504719)(低龄)</s> | [帽子红酒君](https://space.bilibili.com/1360393249) 
+| [孔子女士大义](https://space.bilibili.com/3546387885066751) | [6个硬币好多啊](https://space.bilibili.com/493019712) | <s>[狸子狸子雨](https://space.bilibili.com/686504719)<sub>(低龄)</sub></s> | [帽子红酒君](https://space.bilibili.com/1360393249) | [嗷老虎钳子](https://space.bilibili.com/474016968) |
 </sup>
 
 ### 归档视频
