@@ -4,6 +4,32 @@
 <head>
     <title>视频归档表</title>
     <style>
+        /* 采用类Github 色系 */
+        body {
+            background-color: #0d1117;
+            color: #c9d1d9;
+            font-family: "Microsoft Yahei UI", "Microsoft Yahei" ,"-apple-system", "BlinkMacSystemFont", "Segoe UI", Helvetica, Arial, sans-serif;
+            margin: 2em;
+            line-height: 1.6;
+        }
+        a {
+            color: inherit;
+            text-decoration: none;
+            position: relative;
+            color: #62adf8;
+        }
+        a::after {
+            /*content: "🡕";*/ /*多余*/
+            font-size: 0.9em;
+            color: #58a6ff;
+        }
+        a:hover {
+            /* text-decoration: underline;  鼠标悬停提示 */
+            /* 算了不加下横线, 颜色已经很明显, 下横线影响看字 */
+            color: #e57c2f; /* #9d5207; 这互补色太暗, 亮度一致一下*/
+        }
+    </style>
+    <style>
         #title {
             text-align: center;
             font-size: 14pt;
@@ -14,7 +40,7 @@
             position: relative;
             display: inline-block;
             color: transparent;
-            background-color: #EEEEEEEE;
+            background-color: #3333;
             cursor: pointer;
         }
 
@@ -28,23 +54,23 @@
         }
 
         .tb1 {
-            border: 2pt solid black;
+            border: 2pt solid #30363d;
             border-collapse: collapse;
             font-size: 10pt;
             margin: 0 auto;
         }
 
         .tb1>tbody>tr>td {
-            border: 1pt solid black;
+            border: 1pt solid #30363d;
         }
 
         .tb1>thead th {
-            border: 1.5pt solid black;
+            border: 1.5pt solid #30363d;
         }
 
-        .tb1>tbody>tr:nth-of-type(2n),
+        .tb1>tbody>tr:nth-of-type(even),
         .tb1>thead {
-            background-color: #EFE;
+            background-color: #161b22;
         }
 
         .tb1>tbody>tr>td:nth-of-type(2),
