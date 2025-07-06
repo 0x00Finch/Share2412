@@ -22,6 +22,9 @@
 | 视频 | 作者 | 稿件时间(北京) | 归档 | 注 |
 | :-- | :--: | :--: | :--: | :--: |
 | [高铁上，一女子因嫌弃同车厢小孩吵闹。竟用热水泼小孩，事后狡辩说:水是从你们列车上接的，烫也是你们烫的](https://www.bilibili.com/video/BV1wD3Qz8EnW) | [餐厅47](https://space.bilibili.com/1771769277) | 2025/07/05 10:38:45 | [39](https://t.me/NnShared/39) <sup>39</sup> | - |
+| [男子自称“民警”制止纠纷，偏袒打人捞女，被打前男友情绪崩溃。后续捞女又诬告强奸，被打男子住进精神病院确诊精神病](https://www.bilibili.com/video/BV18wgSzhEun) | [墨家黑土](https://space.bilibili.com/108766389) | 2025/07/01 11:48:10 | [40](https://t.me/NnShared/40) <sup>40</sup> | - |
+| [令人无语，女子在日本地铁站补票，因不会说日语且手机未安装翻译软件与工作人员争吵](https://www.bilibili.com/video/BV1dYKmzoEtg) | [七羽黯](https://space.bilibili.com/351587583) | 2025/06/28 21:57:31 | [42](https://t.me/NnShared/42) <sup>42</sup> | - |
+| [和学生谈恋爱案发，被判12年想减刑！](https://www.bilibili.com/video/BV1BqMuztEAk) | [郭庆梓律师](https://space.bilibili.com/13651973) | 2025/06/15 18:05:00 | [43](https://t.me/NnShared/43) <sup>43</sup> | - |
 | [山西大同订婚案 ＃让子弹飞 ＃彩礼](https://www.bilibili.com/video/BV1YT5jzXEEt) | [上海女s-上海女王曼曼](https://space.bilibili.com/3546695122029242) | 2025/04/18 19:29:05 | [36](https://t.me/NnShared/36) <sup>38</sup> | - |
 | [补档:番外:接触半个月的外国女孩，治好了我的恋爱精神内耗](https://www.bilibili.com/video/BV1pLX8YfEkW) | [把饼干咬哭了](https://space.bilibili.com/26857679) | 2025/03/23 07:04:53 | [29](https://t.me/NnShared/29) <sup>31</sup> | - |
 | [取证到戒网瘾学校的犯罪证据却无法关闭学校](https://www.bilibili.com/video/BV1viXpYwEUy) | [182105qtz](https://space.bilibili.com/520619227) | 2025/03/22 14:36:18 | [34](https://t.me/NnShared/34) <sup>36</sup> | - |
