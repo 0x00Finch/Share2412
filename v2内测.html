@@ -252,15 +252,15 @@
         <div id="archive_v2_1" role="table" aria-label="视频归档列表">
             <!-- 表头 -->
             <div role="row">
-                <div role="columnheader">ID</div>
-                <div role="columnheader">视频</div>
-                <div role="columnheader">
+                <div role="columnheader" style="color:#ebebeb">ID</div>
+                <div role="columnheader" style="color:#ebebeb">视频</div>
+                <div role="columnheader" style="color:#ebebeb">
                     <div style="line-height: 1.2rem">
                         <div style="padding-left: 0.85rem; padding-bottom: 0.2rem;">时间<sup style="font-size: 0.7rem">+8</sup></div>
                         <div>作者</div>
                     </div>
                 </div>
-                <div role="columnheader">备注</div>
+                <div role="columnheader" style="color:#ebebeb">备注</div>
             </div>
 
             <!-- 表格行 -->
@@ -1320,20 +1320,16 @@
             <style>
                 #archive_v2_1 {
                     display: grid;
-                    grid-template-columns: 3rem auto minmax(0, 7.5rem) minmax(0, 9rem);
+                    grid-template-columns: 3em auto minmax(0, 7em) minmax(0, 9em);
                     width: 100%;
                     margin: 0 auto;
-                    gap: 0;
+                    gap: 1px;
                     text-align: center;
                     outline: 0.2rem solid #30363d;
                     font-size: 1rem;
                 }
 
                 @media (max-width: 600px) {
-                    #archive_v2_1 {
-                        grid-template-columns: auto auto auto auto;
-                        /* 小屏自动布局 */
-                    }
 
                     #archive_v2_1>[role="cell"] {
                         text-align: left;
@@ -1375,14 +1371,17 @@
 
                 /* 线框 */
                 #archive_v2_1>div[role="row"]>div[role="columnheader"] {
-                    border-bottom: 0.2rem solid #30363d;
-                    border-right: 0.2rem solid #30363d;
+                    outline: 0.15rem solid #30363d;
                 }
 
                 #archive_v2_1 div[role="row"]>div {
-                    border-bottom: 0.1rem solid #30363d;
-                    border-right: 0.1rem solid #30363d;
+                    outline: 0.05rem solid #30363d;
+                    outline-offset: -0.5px;
+                    outline-width: 0.1rem;
 
+                }
+                #archive_v2_1 div[role="row"]:nth-of-type(odd)>div{
+                    background-color: #161b22;
                 }
             </style>
 
