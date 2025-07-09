@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
     <head>
         <title>视频归档表</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -75,20 +74,20 @@
                 position: relative;
             }
 
-            .tb1>tbody>tr>td {
+            .tb1 > tbody > tr > td {
                 border: 1pt solid #30363d;
             }
 
-            .tb1>thead th {
+            .tb1 > thead th {
                 border: 1.5pt solid #30363d;
             }
 
-            .tb1>tbody>tr:nth-of-type(even),
-            .tb1>thead {
+            .tb1 > tbody > tr:nth-of-type(even),
+            .tb1 > thead {
                 background-color: #161b22;
             }
 
-            .tb1>tbody>tr>td {
+            .tb1 > tbody > tr > td {
                 padding: 0.2rem 0.5rem 0.2rem 0.5rem;
             }
 
@@ -162,32 +161,41 @@
                     <span class="comment_s">(不是不想放原视频，只是Github的存储空间太贵)</span>
                 </div>
                 <div style="padding-bottom: 0.4rem; font-size: 0.8rem">
-                    24/12/03 由于Github空间不足<span class="censored">+资金不足</span>，不再提供视频预览，而是直接上传原始视频到TG，点击归档编号前往查看
+                    24/12/03 由于Github空间不足<span class="censored">+资金不足</span
+                    >，不再提供视频预览，而是直接上传原始视频到TG，点击归档编号前往查看
                 </div>
             </details>
             <div style="font-size: 1rem">
-                这里只包含v2版内容, 另 251项 内容见：<a href="https://github.com/NnWinter/Bilibili_Shared/tree/main/Archive">v1版</a>
+                这里只包含v2版内容, 另 251项 内容见：<a
+                    href="https://github.com/NnWinter/Bilibili_Shared/tree/main/Archive"
+                    >v1版</a
+                >
             </div>
             <hr />
             <div>
                 <!--某种意义上算出来的居中-->
-                <div style="
+                <div
+                    style="
                         display: inline-block;
                         position: relative;
                         padding-bottom: 0.2rem;
                         width: 7rem;
                         text-align: center;
                         left: calc(50% - 3.5rem);
-                    ">
+                    "
+                >
                     逆天UP荣誉榜
                 </div>
-                <div class="comment_s" style="
+                <div
+                    class="comment_s"
+                    style="
                         display: inline;
                         position: relative;
                         width: 0.12rem;
                         text-align: center;
                         left: calc((100% + 7rem) * 0.5 - 7.5rem);
-                    ">
+                    "
+                >
                     (笑)
                 </div>
                 <!-- 每行最多3个td -->
@@ -204,23 +212,28 @@
                     </tr>
                 </table>
                 <!--某种意义上算出来的居中2-->
-                <div style="
+                <div
+                    style="
                         display: inline-block;
                         position: relative;
                         padding-bottom: 0.2rem;
                         width: 7rem;
                         text-align: center;
                         left: calc(50% - 3.5rem);
-                    ">
+                    "
+                >
                     逆天人荣誉榜
                 </div>
-                <div class="comment_s" style="
+                <div
+                    class="comment_s"
+                    style="
                         display: inline;
                         position: relative;
                         width: 0.12rem;
                         text-align: center;
                         left: calc((100% + 7rem) * 0.5 - 7.5rem);
-                    ">
+                    "
+                >
                     (笑)
                 </div>
                 <!-- 每行最多5个td (无附注，后续可以考虑加在鼠标hover) -->
@@ -236,8 +249,10 @@
                         <td><a href="https://space.bilibili.com/3546387885066751">孔子女士大义</a></td>
                         <td><a href="https://space.bilibili.com/493019712">6个硬币好多啊</a></td>
                         <td>
-                            <s class="censored"><a href="https://space.bilibili.com/686504719"
-                                    class="censored">狸子狸子雨</a><sub>(低龄)</sub></s>
+                            <s class="censored"
+                                ><a href="https://space.bilibili.com/686504719" class="censored">狸子狸子雨</a
+                                ><sub>(低龄)</sub></s
+                            >
                         </td>
                         <td><a href="https://space.bilibili.com/1360393249">帽子红酒君</a></td>
                         <td><a href="https://space.bilibili.com/517547994">世界的则律</a></td>
@@ -252,15 +267,29 @@
         <div id="archive_v2_1" role="table" aria-label="视频归档列表">
             <!-- 表头 -->
             <div role="row">
-                <div role="columnheader" style="color:#ebebeb">ID</div>
-                <div role="columnheader" style="color:#ebebeb">视频</div>
-                <div role="columnheader" style="color:#ebebeb">
+                <div role="columnheader" style="color: #ebebeb">ID</div>
+                <div role="columnheader" style="color: #ebebeb; padding-left: 2.8em">
+                    <div>视频</div>
+                    <sub
+                        style="
+                            position: absolute;
+                            font-size: 0.6em;
+                            margin-top: 3.5em;
+                            padding-left: 0.35em;
+                            font-weight: normal;
+                        "
+                        >点击可跳转</sub
+                    >
+                </div>
+                <div role="columnheader" style="color: #ebebeb">
                     <div style="line-height: 1.2rem">
-                        <div style="padding-left: 0.85rem; padding-bottom: 0.2rem;">时间<sup style="font-size: 0.7rem">+8</sup></div>
+                        <div style="padding-left: 0.95rem; padding-bottom: 0.2rem">
+                            时间<sup style="font-size: 0.7rem">+8</sup>
+                        </div>
                         <div>作者</div>
                     </div>
                 </div>
-                <div role="columnheader" style="color:#ebebeb">备注</div>
+                <div role="columnheader" style="color: #ebebeb">备注</div>
             </div>
 
             <!-- 表格行 -->
@@ -1330,18 +1359,17 @@
                 }
 
                 @media (max-width: 600px) {
-
-                    #archive_v2_1>[role="cell"] {
+                    #archive_v2_1 > [role="cell"] {
                         text-align: left;
                         padding: 0.4rem 0.8rem;
                     }
                 }
 
-                #archive_v2_1>div[role="row"] {
+                #archive_v2_1 > div[role="row"] {
                     display: contents;
                 }
 
-                #archive_v2_1>div[role="row"]:nth-of-type(1) div[role="columnheader"] {
+                #archive_v2_1 > div[role="row"]:nth-of-type(1) div[role="columnheader"] {
                     font-weight: bold;
                     color: #fff;
                     display: flex;
@@ -1353,34 +1381,34 @@
                     font-size: 1.1rem;
                 }
 
-                #archive_v2_1>div[role="row"]>div[role="cell"] {
+                #archive_v2_1 > div[role="row"] > div[role="cell"] {
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     height: 100%;
                 }
 
-                #archive_v2_1>div[role="row"]>div[role="cell"]:nth-of-type(2) {
+                #archive_v2_1 > div[role="row"] > div[role="cell"]:nth-of-type(2) {
                     text-align: left;
                     justify-content: left;
                 }
 
-                #archive_v2_1>div[role="row"]>div[role="cell"]:nth-of-type(3) {
+                #archive_v2_1 > div[role="row"] > div[role="cell"]:nth-of-type(3) {
                     flex-direction: column;
                 }
 
                 /* 线框 */
-                #archive_v2_1>div[role="row"]>div[role="columnheader"] {
+                #archive_v2_1 > div[role="row"] > div[role="columnheader"] {
                     outline: 0.15rem solid #30363d;
                 }
 
-                #archive_v2_1 div[role="row"]>div {
+                #archive_v2_1 div[role="row"] > div {
                     outline: 0.05rem solid #30363d;
                     outline-offset: -0.5px;
                     outline-width: 0.1rem;
-
                 }
-                #archive_v2_1 div[role="row"]:nth-of-type(odd)>div{
+
+                #archive_v2_1 div[role="row"]:nth-of-type(odd) > div {
                     background-color: #161b22;
                 }
             </style>
@@ -1479,5 +1507,4 @@
             </tr>
         </table>
     </body>
-
 </html>
