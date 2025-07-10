@@ -1792,4 +1792,10 @@
       </tr>
     </table>
   </body>
+  <script>
+    window.onload = function () {
+      const height = document.documentElement.scrollHeight;
+      parent.postMessage({ type: "setIframeHeight", height }, "*");
+    };
+  </script>
 </html>
