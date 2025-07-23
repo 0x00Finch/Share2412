@@ -1,0 +1,622 @@
+<style>
+  body {
+    background-color: white;
+    font-family: 'Microsoft YaHei UI', Arial, sans-serif;
+  }
+  .tb {
+    border-collapse: collapse;
+    border: 4px solid #000;
+    width: 100%;
+    font-family: 'Microsoft YaHei', Arial, sans-serif;
+  }
+
+  .tb > thead > tr > th {
+    border: 4px solid #000;
+    background-color: #f2f2f2;
+    color: #000;
+    text-align: center;
+    max-width: 150px;
+    overflow: hidden;
+    font-size: 17pt;
+  }
+  .tb > tbody > tr > td,
+  .tb > tbody > tr > th {
+    border: 2px solid #000;
+    padding: 2px 8px 2px 8px;
+    max-width: 150px;
+    font-size: 16.1pt;
+    white-space: normal; /* 允许正常换行 */
+    word-break: break-word; /* 允许单词中断开换行 */
+    overflow-wrap: break-word; /* 兼容性写法 */
+    
+  }
+  .img {
+    width: 150px;
+    height: 150px;
+    max-height: 150px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+  }
+  .event {
+    border: 4px solid red !important;
+  }
+</style>
+<html>
+  <head> </head>
+  <body>
+    <table class="tb">
+      <thead>
+        <tr>
+          <th>角色</th>
+          <th>The Boss<br />（Boss女王）</th>
+          <th>The Sorrow<br />（悲伤）</th>
+          <th>Ocelot /<br />Revolver Ocelot<br />（山猫/奥赛洛特）</th>
+          <th>Naked Snake /<br />Big Boss<br />（裸蛇/大Boss）</th>
+          <th>Venom Snake<br />（毒蛇）</th>
+          <th>Solid Snake<br />（固蛇）</th>
+          <th>Liquid Snake<br />（液体蛇）</th>
+          <th>Solidus Snake<br />（固相蛇）</th>
+          <th>Kazuhira Miller<br />（卡兹）</th>
+          <th>Gray Fox<br />（灰狐）</th>
+          <th>EVA<br />（爱娃）</th>
+          <th>Zero<br />（零少校）</th>
+          <th>Sigint<br />（信号）</th>
+          <th>Para-Medic<br />（帕拉米迪克）</th>
+          <th>Paz Ortega<br />（帕兹）</th>
+          <th>Huey Emmerich<br />（休伊）</th>
+          <th>Quiet<br />（静静）</th>
+          <th>Otacon<br />（奥塔康）</th>
+          <th>Meryl Silverburgh<br />（梅丽尔）</th>
+          <th>Sunny<br />（桑尼）</th>
+          <th>Raiden<br />（雷电）</th>
+          <th>Doktor<br />（医生）</th>
+          <th>Blade Wolf<br />（刃狼）</th>
+          <th>Little John<br />（小约翰）</th>
+        </tr>
+        <tr>
+          <th>年份</th>
+          <th><img class="img" src="0.jpg" /></th>
+          <th><img class="img" src="1.jpg" /></th>
+          <th><img class="img" src="2.jpg" /></th>
+          <th><img class="img" src="3.jpg" /></th>
+          <th><img class="img" src="4.jpg" /></th>
+          <th><img class="img" src="5.jpg" /></th>
+          <th><img class="img" src="6.jpg" /></th>
+          <th><img class="img" src="7.jpg" /></th>
+          <th><img class="img" src="8.jpg" /></th>
+          <th><img class="img" src="9.jpg" /></th>
+          <th><img class="img" src="10.jpg" /></th>
+          <th><img class="img" src="11.jpg" /></th>
+          <th><img class="img" src="12.jpg" /></th>
+          <th><img class="img" src="13.jpg" /></th>
+          <th><img class="img" src="14.jpg" /></th>
+          <th><img class="img" src="15.jpg" /></th>
+          <th><img class="img" src="16.jpg" /></th>
+          <th><img class="img" src="17.jpg" /></th>
+          <th><img class="img" src="18.jpg" /></th>
+          <th><img class="img" src="19.jpg" /></th>
+          <th><img class="img" src="20.jpg" /></th>
+          <th><img class="img" src="21.jpg" /></th>
+          <th><img class="img" src="22.jpg" /></th>
+          <th><img class="img" src="23.jpg" /></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>1943</th>
+          <td class="event">加入OSS并组建“眼镜蛇部队”</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>1944</th>
+          <td class="event">诺曼底战役剖腹产生下Ocelot（与The Sorrow）</td>
+          <td class="event">诺曼底战役诞下Ocelot（与The Boss）</td>
+          <td class="event">诺曼底战役出生（父母：The Boss & The Sorrow）</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>1952</th>
+          <td class="event">招募Naked Snake成为弟子（与Naked Snake）</td>
+          <td></td>
+          <td></td>
+          <td class="event">被The Boss招募并接受训练（与The Boss）</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>1960</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="event">创建爱国者（与The Boss·Big Boss）</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>1964</th>
+          <td class="event">执行Virtuous Mission并在Operation Snake Eater中牺牲（与Naked Snake·EVA·Ocelot·Sigint·Para-Medic）</td>
+          <td class="event">在Operation Snake Eater中阵亡化为灵魂引导Naked Snake（与The Boss·Naked Snake）</td>
+          <td class="event">Operation Snake Eater与Naked Snake交锋（与The Boss·Naked Snake）</td>
+          <td class="event">Operation Snake Eater击败The Boss获称号“Big Boss”（与The Boss·EVA·Ocelot·Sigint·Para-Medic）</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="event">Operation Snake Eater支援Naked Snake（与Naked Snake·The Boss）</td>
+          <td></td>
+          <td class="event">Operation Snake Eater技术支援（与The Boss·Big Boss·EVA·Ocelot·Para-Medic）</td>
+          <td class="event">Operation Snake Eater医疗支援（与The Boss·Big Boss·Sigint·Zero）</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>1970</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="event">被Big Boss收编FOXHOUND（与Big Boss）</td>
+          <td></td>
+          <td></td>
+          <td class="event">出任DARPA局长（与Zero）</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>1972</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="event">DNA用于Les Enfants Terribles计划（与Zero·Para-Medic·Solid系三兄弟）</td>
+          <td></td>
+          <td class="event">克隆诞生（与Big Boss·Zero）</td>
+          <td class="event">克隆诞生（与Big Boss·Zero）</td>
+          <td class="event">克隆诞生（与Big Boss·Zero）</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="event">主导Les Enfants Terribles克隆计划（与Big Boss·Para-Medic·Sigint）</td>
+          <td></td>
+          <td class="event">参与克隆计划（与Zero·Big Boss）</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>1974</th>
+          <td></td>
+          <td></td>
+          <td class="event">加入MSF（与Big Boss·Kaz）</td>
+          <td class="event">创建MSF（与Kaz·Paz·Chico·Huey）</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="event">被Big Boss招募加入MSF（与Big Boss）</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="event">被MSF救出并潜伏Cipher（与Big Boss·Kaz）</td>
+          <td class="event">ZEKE首席工程师（与Big Boss·Kaz）</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>1975</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="event">MSF毁灭与重伤昏迷（与Kaz·Paz·Venom Snake）</td>
+          <td class="event">XOF袭击中受伤后被塑造成Big Boss替身（与Big Boss·Kaz）</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="event">海上平台袭击幸存（与Big Boss·Venom Snake）</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="event">爆炸导致MSF毁灭（与Big Boss·Kaz·Venom Snake）</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>1984</th>
+          <td></td>
+          <td></td>
+          <td class="event">Diamond Dogs顾问（与Venom Snake·Kaz）</td>
+          <td class="event">指派Venom Snake为替身并消失（与Venom Snake·Kaz·Ocelot）</td>
+          <td class="event">组建Diamond Dogs（与Kaz·Ocelot）</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="event">Diamond Dogs副指挥（与Venom Snake·Ocelot）</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="event">被Diamond Dogs拘留审判（与Venom Snake·Kaz·Ocelot）</td>
+          <td class="event">阿富汗战败后被Venom Snake俘获并自愿加入Diamond Dogs（与Venom Snake·Kaz·Ocelot）</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>1990</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="event">童兵时期被Solidus训练（与Solidus Snake）</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>1995</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="event">作为Outer Heaven幕后首领与Solid Snake对峙（与Solid Snake·Gray Fox·Kaz）</td>
+          <td></td>
+          <td class="event">外外天堂行动击败Big Boss（与Big Boss·Gray Fox·Kaz）</td>
+          <td></td>
+          <td></td>
+          <td class="event">支援Solid Snake于Outer Heaven（与Solid Snake）</td>
+          <td class="event">Outer Heaven与Solid Snake交手（与Solid Snake·Big Boss）</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>2001</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="event">出任美国总统（与Zero）</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>2005</th>
+          <td></td>
+          <td></td>
+          <td class="event">Shadow Moses担任FOXHOUND成员（与Solid Snake·Liquid Snake·Otacon·Meryl）</td>
+          <td></td>
+          <td></td>
+          <td class="event">Shadow Moses事件摧毁Metal Gear Rex（与Liquid Snake·Ocelot·Otacon·Meryl·Gray Fox）</td>
+          <td class="event">Shadow Moses叛乱（与Solid Snake·Ocelot·Otacon·Meryl·Gray Fox）</td>
+          <td></td>
+          <td></td>
+          <td class="event">Shadow Moses以赛博忍者身份救援Solid Snake（与Solid Snake·Liquid Snake·Ocelot）</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="event">Shadow Moses救援并结盟Solid Snake（与Solid Snake·Liquid Snake·Ocelot·Meryl·Gray Fox）</td>
+          <td class="event">Shadow Moses并肩作战（与Solid Snake·Liquid Snake·Ocelot·Otacon·Gray Fox）</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>2007</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="event">成立Philanthropy追踪Metal Gear走私（与Otacon）</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="event">成立Philanthropy（与Solid Snake）</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>2009</th>
+          <td></td>
+          <td></td>
+          <td class="event">Big Shell幕后操纵（与Solidus Snake·Raiden）</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="event">曼哈顿决战被Raiden击败（与Raiden·Ocelot）</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="event">营救Sunny共居海上要塞（与Solid Snake·Sunny）</td>
+          <td></td>
+          <td class="event">被Solid Snake & Otacon营救（与Solid Snake·Otacon）</td>
+          <td class="event">Big Shell事件救出Hostages（与Solid Snake·Ocelot·Solidus Snake·Otacon）</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>2014</th>
+          <td></td>
+          <td></td>
+          <td class="event">外海战役化身Liquid Ocelot（与Solid Snake·Meryl·Sunny）</td>
+          <td></td>
+          <td></td>
+          <td class="event">外海战役终结爱国者AI（与Ocelot·Meryl·Sunny·Big Boss）</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="event">以Big Mama身份守护Big Boss遗体并牺牲（与Solid Snake·Big Boss）</td>
+          <td class="event">在昏迷中凋亡（与Big Boss·Solid Snake）</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="event">外海战役率Rat Patrol 01（与Solid Snake·Ocelot·Sunny）</td>
+          <td class="event">FOXALIVE病毒终结爱国者AI（与Solid Snake·Ocelot·Meryl·Big Boss）</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>2016</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="event">获增强义体（与Doktor）</td>
+          <td class="event">为Raiden装配义体（与Raiden）</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>2018</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="event">对抗Desperado并收编Blade Wolf（与Blade Wolf）</td>
+          <td class="event">Maverick顾问（与Raiden·Blade Wolf）</td>
+          <td class="event">阿布哈兹行动被Raiden俘获重编（与Raiden·Doktor）</td>
+          <td class="event">出生于Raiden与Rosemary家庭（与Raiden）</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
