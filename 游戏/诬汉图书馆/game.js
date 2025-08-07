@@ -143,6 +143,9 @@ function draw() {
   canvas.height = canvasRect.height;
 
   let scale = Math.min(canvas.width / gWidth, canvas.height / gHeight);
+  let sWidth = gWidth * scale;
+  let sHeight = gHeight * scale;
+  
   let offsetX_main = (canvas.width - gWidth * scale) / 2;
 
   // 绘制玩家是否在抓
@@ -159,7 +162,7 @@ function draw() {
   ctx.drawImage(
     stalker_recordingStage === 2 ? PhoneRecordImg : PhoneImg,
     offsetX_main + gWidth * scale - PhoneImg.width * scale,
-    canvas.height - PhoneImg.height * scale + phoneShiftY,
+    sHeight - PhoneImg.height * scale + phoneShiftY,
     PhoneImg.width * scale,
     PhoneImg.height * scale
   );
@@ -167,7 +170,7 @@ function draw() {
   // 绘制录像线
   if (gameStage === 1) {
     ctx.fillStyle = "rgba(255, 0, 0, 0.5)"; // 红色半透明
-    ctx.fillRect(0, canvas.height * lineHeight, canvas.width, 2); // 绘制横线
+    ctx.fillRect(offsetX_main, sHeight * lineHeight, sWidth, 2); // 绘制横线
   }
 }
 
