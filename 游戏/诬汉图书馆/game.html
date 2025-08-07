@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>诬汉图书馆</title>
+    <style>
+      #gameCanvas {
+        background-color: #000;
+        display: block;
+        position: fixed;
+        margin: 0;
+        padding: 0;
+        z-index: 5;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #f0f0f0;
+      }
+      #gameInfo {
+        position: fixed;
+        color: #fff;
+        background-color: #0000005d;
+        font-size: 5vw;
+        width: 100%;
+        text-align: center;
+        z-index: 10;
+      }
+      #hud {
+        position: fixed;
+        color: #fff;
+        background-color: #0000005d;
+        top:1vw;
+        font-size: 3vw;
+        width: 100%;
+        text-align: center;
+        z-index: 10;
+      }
+      #controlHint {
+        font-size: 3vw;
+        color: #fff;
+        margin-top: 0px;
+        padding-bottom: 1vw;
+      }
+      .end{
+        margin-top:5vw;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="gameCanvas"></canvas>
+    <div id="gameInfo"></div>
+    <script src="game.js"></script>
+  </body>
+</html>
