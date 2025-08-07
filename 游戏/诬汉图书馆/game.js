@@ -15,7 +15,7 @@ let gRatio = 0; // 计算图片宽高比
 // ---- 游戏配置 ----
 const scoreSpeed = 0.01;
 const scoreDecSpeed = 0.005;
-const difficultySpeed = 0.00001; // 难度增加速度
+const difficultySpeed = 0.00002; // 难度增加速度
 const maxDifficulty = 10; // 最大难度
 const recordBaseInterval = 5000; // 基础录像间隔时间（毫秒）
 const recordRandomRange = 3000; // 录像间隔的随机范围（毫秒）
